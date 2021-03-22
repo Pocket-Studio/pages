@@ -3,7 +3,7 @@
             let scene = new THREE.Scene();
             const WIDTH = window.innerWidth
             const HEIGHT = window.innerHeight
-            const FOV = 45;
+            const FOV = 55;
             const NEAR = 1;
             const RENDER_DISTANCE = 10000;
             let camera = new THREE.PerspectiveCamera(FOV, WIDTH/HEIGHT, NEAR, RENDER_DISTANCE)
@@ -12,9 +12,11 @@
             });
     
 
-            let earthTexture = new THREE.TextureLoader().load('./2k-earth-nightmap.jpg')
+            let earthTexture = new THREE.TextureLoader().load('./earth.jpeg')
             let earthMaterial = new THREE.MeshBasicMaterial({
-                map: earthTexture
+                map: earthTexture,
+                wireframe: true,
+                color: 0x12f8af
             });
 
             camera.position.z = 200
@@ -47,6 +49,11 @@
             sphere.position.set(82,0,100)
             scene.add(sphere, spotLight)
             RENDERER.render(scene,camera)
+
+
+
+            scene.add( new THREE.AmbientLight( 0x404040 ) );
+            
     
             const render = () => {
 

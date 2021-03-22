@@ -12,11 +12,9 @@
             });
     
 
-            let earthTexture = new THREE.TextureLoader().load('./earth.jpeg')
+            let earthTexture = new THREE.TextureLoader().load('https://raw.githubusercontent.com/Pocket-Studio/pocket-studio.github.io/main/earth.jpeg')
             let earthMaterial = new THREE.MeshBasicMaterial({
                 map: earthTexture,
-                wireframe: true,
-                color: 0x12f8af
             });
 
             camera.position.z = 200

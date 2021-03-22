@@ -1,5 +1,4 @@
     let camera;
-    
          start = ( ) => {
             let scene = new THREE.Scene();
             const WIDTH = window.innerWidth
@@ -13,7 +12,7 @@
             });
     
 
-            let earthTexture = new THREE.TextureLoader().load('/earth.jfif')
+            let earthTexture = new THREE.TextureLoader().load('./8k-night-earth.jpg')
             let earthMaterial = new THREE.MeshBasicMaterial({
                 map: earthTexture
             });

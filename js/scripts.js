@@ -29,7 +29,7 @@
 
             let greenWireframe = new THREE.MeshBasicMaterial({
                 color: 0x12F8AF,
-                wireframe : true,
+                wireframe : false,
             });
             let redWireframe = new THREE.MeshBasicMaterial({
                 color: 0x12F8AF,

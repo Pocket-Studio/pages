@@ -74,10 +74,11 @@
             });
     
 
-            let loader = new THREE.TextureLoader()
+            let earthTexture = new THREE.TextureLoader().load('/earth.jfif')
+            let earthMaterial = new THREE.MeshBasicMaterial({
+                map: earthTexture
+            });
 
-
-            loader.load('/earth.jfif')
             camera.position.z = 200
             RENDERER.setSize(WIDTH, HEIGHT)
             document.getElementById('pocketstudio').appendChild(RENDERER.domElement)
@@ -85,6 +86,8 @@
     
             let geometry = new THREE.BoxGeometry(2000,2000,2000)
             let sGeometry = new THREE.SphereGeometry(80,80,80)
+
+
 
             let greenWireframe = new THREE.MeshBasicMaterial({
                 color: 0x12F8AF,
@@ -102,7 +105,7 @@
 
      
             let cube = new THREE.Mesh(geometry, greenWireframe)
-            let sphere = new THREE.Mesh(sGeometry, redWireframe)
+            let sphere = new THREE.Mesh(sGeometry, earthMaterial)
             sphere.position.set(82,0,100)
             scene.add(sphere, spotLight)
             RENDERER.render(scene,camera)

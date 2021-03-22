@@ -12,7 +12,7 @@
             });
     
 
-            let earthTexture = new THREE.TextureLoader().load('./8k-night-earth.jpg')
+            let earthTexture = new THREE.TextureLoader().load('./2k-earth-nightmap.jpg')
             let earthMaterial = new THREE.MeshBasicMaterial({
                 map: earthTexture
             });
